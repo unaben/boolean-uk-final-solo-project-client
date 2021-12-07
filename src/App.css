@@ -1,0 +1,87 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 20px;
+}
+.map {
+  height: 75%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.marker {
+  background-image: url("https://i.imgur.com/oz3r3Wq.png");
+  background-size: cover;
+  width: 22px;
+  height: 22px;
+  background-color: yellow;
+  border-radius: 11px;
+  border: solid 3px darkslategray;
+}
+
+.marker-delivery {
+  background-image: url("https://i.imgur.com/cIooqnp.png");
+  background-size: cover;
+  width: 22px;
+  height: 22px;
+  border-radius: 15px;
+  border: solid darkslategrey 3px;
+}
+
+.search-bar {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.search-bar h2 {
+  margin-left: 10px;
+}
+
+input {
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* .form_input {
+  padding: 5px;
+  border-radius: 5px;
+} */
+
+.form_container {
+  margin: 20px;
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.login-btn,
+.booking-btn {
+  display: grid;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.signup-ui,
+.booking-form,
+.booking-ui {
+  padding-left: 20px;
+}
+
+.map-btn {
+  display: grid;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 40px
+}
