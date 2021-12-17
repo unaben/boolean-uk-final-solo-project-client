@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router";
 
-export default function Signup({ authenticatedUser, setAuthenticatedUser }) {
-  const [user, setUser] = useState({
+export default function Signup({
+  authenticatedUser,
+  setAuthenticatedUser,
+  setLogin,
+}) {
+  const [users, setUsers] = useState({
     first_name: "",
     last_name: "",
     email: "",
@@ -11,7 +17,9 @@ export default function Signup({ authenticatedUser, setAuthenticatedUser }) {
     phone: "",
   });
 
-  console.log({ user, authenticatedUser });
+  console.log({ users, authenticatedUser });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const userAsString = localStorage.getItem("user");
@@ -30,10 +38,10 @@ export default function Signup({ authenticatedUser, setAuthenticatedUser }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...user }),
+      body: JSON.stringify({ ...users }),
     };
 
-    fetch("http://localhost:3030/signup", fetchOptions)
+    fetch(`${process.env.REACT_APP_FETCH_URL}/signup`, fetchOptions)
       .then((res) => res.json())
       .then((data) => {
         const token = data.token;
@@ -43,7 +51,8 @@ export default function Signup({ authenticatedUser, setAuthenticatedUser }) {
         if (token) {
           setAuthenticatedUser(token);
 
-          localStorage.setItem("user: ", token);
+          localStorage.setItem("token", token);
+          navigate("/bookings");
         }
       });
   };
@@ -52,105 +61,122 @@ export default function Signup({ authenticatedUser, setAuthenticatedUser }) {
     const name = event.target.name;
     const value = event.target.value;
 
-    setUser({ ...user, [name]: value });
+    setUsers({ ...users, [name]: value });
   };
 
   return (
-    <main>
-      <div className="form_container">
-        <form className="form-stack" onSubmit={handleSubmit}>
-          <h2>Signup Form</h2>
+    <>
+      <main>
+        <div className="main-container">
           <div>
-            <label htmlFor="first_name">First Name</label>
-          </div>
-          <div>
-            <input
-              className="form_input"
-              type="text"
-              id="first_name"
-              name="first_name"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="last_name">Last Name</label>
-          </div>
-          <div>
-            <input
-              className="form_input"
-              type="text"
-              id="last_name"
-              name="last_name"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Email</label>
-          </div>
-          <div>
-            <input
-              className="form_input"
-              type="email"
-              id="email"
-              name="email"
-              onChange={handleChange}
-            />
-          </div>
+            <div className="form_container">
+              <form className="form-stack" onSubmit={handleSubmit}>
+                <h2 className="signup-form">Register Form</h2>
+                <div>
+                  <label htmlFor="first_name">First Name</label>
+                </div>
+                <div>
+                  <input
+                    className="form_input"
+                    type="text"
+                    id="first_name"
+                    name="first_name"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="last_name">Last Name</label>
+                </div>
+                <div>
+                  <input
+                    className="form_input"
+                    type="text"
+                    id="last_name"
+                    name="last_name"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email">Email</label>
+                </div>
+                <div>
+                  <input
+                    className="form_input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    onChange={handleChange}
+                  />
+                </div>
 
-          <div>
-            <label htmlFor="password">Password</label>
+                <div>
+                  <label htmlFor="password">Password</label>
+                </div>
+                <div>
+                  <input
+                    className="form_input"
+                    type="password"
+                    id="password"
+                    name="password"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="password">Postcode</label>
+                </div>
+                <div>
+                  <input
+                    className="form_input"
+                    type="text"
+                    id="postcode"
+                    name="postcode"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="street">Street</label>
+                </div>
+                <div>
+                  <input
+                    className="form_input"
+                    type="text"
+                    id="street"
+                    name="street"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone">Phone</label>
+                </div>
+                <div>
+                  <input
+                    className="form_input"
+                    className="last_form_input"
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    onChange={handleChange}
+                  />
+                </div>
+                <Button variant="contained" type="submit">
+                  Signup
+                </Button>
+                <h3 className="signup-msg">Create a free account</h3>
+              </form>
+            </div>
+            <div>
+              <h3 className="setLogin-click" onClick={() => setLogin(true)}>
+                Already registered?click to login
+              </h3>
+            </div>
           </div>
-          <div>
-            <input
-              className="form_input"
-              type="password"
-              id="password"
-              name="password"
-              onChange={handleChange}
-            />
+          <div className="signup-ui">
+            {!authenticatedUser ? (
+              <h2 className="auth-msg">Successfully signed up</h2>
+            ) : null}
           </div>
-          <div>
-            <label htmlFor="password">Postcode</label>
-          </div>
-          <div>
-            <input
-              className="form_input"
-              type="text"
-              id="postcode"
-              name="postcode"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="street">Street</label>
-          </div>
-          <div>
-            <input
-              className="form_input"
-              type="text"
-              id="street"
-              name="street"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="phone">Phone</label>
-          </div>
-          <div>
-            <input
-              className="form_input"
-              type="text"
-              id="phone"
-              name="phone"
-              onChange={handleChange}
-            />
-          </div>
-          <button className="login-btn" type="submit">
-            Signup
-          </button>
-        </form>
-      </div>
-      <div className="signup-ui">{authenticatedUser ? <div>Successful signed up</div> : null}</div>
-    </main>
+        </div>
+      </main>
+    </>
   );
 }

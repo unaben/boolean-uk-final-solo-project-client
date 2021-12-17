@@ -1,7 +1,14 @@
+
 function Header() {
+  const headerStyle = {
+    // backgroundColor: "royalblue",
+    color: "wheat",   
+  };
   return (
-    <header>
-      <h1>TAXI APP</h1>
+    <header style={headerStyle}>
+      <div>
+      <h1 className='heading'>TAXI-APP</h1>
+      </div>
     </header>
   );
 }

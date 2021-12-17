@@ -1,20 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: cursive;
+  box-sizing: border-box;
+}
+
 body {
-  display: flex;
-  justify-content: center;
   height: 100vh;
+  width: 100vw;
+}
+
+footer{
+  height: 50px;
+}
+
+header{
+display: grid;
+grid-auto-flow: column;
+align-items: center;
+} 
+
+.admin{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.bottom{
+margin-bottom: 10px;
+}
+
+.app-container {
+  background-image: url("https://www.transparenttextures.com/patterns/polonez-pattern.png");
+  /* background-color: burlywood; */
+  background-color: #005b85;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-y: scroll;
+  height: calc(100vh);
+  scroll-behavior: smooth;
+}
+
+.auth-msg {
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
+}
+
+.main-container,
+.login-btn {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.last_form_input {
+  margin-bottom: 10px;
+}
+
+.signup-form,
+.admin-form,
+.login-form-text {
+  margin-bottom: 20px;
+}
+
+.signup-msg {
+  margin-top: 20px;
+}
+
+.signup-btn {
+  margin-top: 15px;
 }
 
 .app {
-  height: 100vh;
-  width: 100vw;
+  height: 80vh;
+  width: 80vw;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .map {
   height: 75%;
-  width: 90%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
+}
+
+.ul-path {
+  display: grid;
+  grid-auto-flow: column;
+  font-size: large;
+  justify-content: right;
+  gap: 30px;
+  padding: 10px;
+}
+
+.ul-path li a {
+  font-size: large;
+  color: wheat;
+}
+
+.footer-pragh{
+  padding: 30px;
+}
+
+.heading {
+  padding: 10px;
+  text-align: -webkit-right;
+  
 }
 
 .marker {
@@ -49,24 +144,54 @@ input {
   margin-left: 10px;
   padding: 5px;
   border-radius: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
 }
 
-/* .form_input {
+.delete-btn {
+  cursor: pointer;
+  color: steelblue;
+  width: 48px;
+  min-width: 48px;
+  height: 36px;
+  font: 1rem;
   padding: 5px;
-  border-radius: 5px;
-} */
+}
+
+.delete-btn :focus,
+.delete-btn :hover {
+  color: red;
+  outline: none;
+}
+
+.auth,
+.bookingForm-container {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ui-container {
+  background-color: rgb(221, 230, 221);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
+  height: fit-content;
+}
 
 .form_container {
-  margin: 20px;
-  border: 1px solid;
-  padding: 10px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(221, 230, 221);
+  padding: 30px;
   border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
   width: fit-content;
 }
 
 .login-btn,
 .booking-btn {
-  display: grid;
   margin-top: 10px;
   border-radius: 5px;
   padding: 5px;
@@ -78,10 +203,82 @@ input {
   padding-left: 20px;
 }
 
+.booking-form {
+  background-color: rgb(218, 227, 238);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
+  height: fit-content;
+}
+
+.bookingForm-dropdown {
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.bookinginput {
+  margin-bottom: 10px;
+}
+
+.booking-form label {
+  margin-left: 10px;
+}
+
 .map-btn {
-  display: grid;
+  /* display: grid; */
   margin-top: 10px;
   border-radius: 5px;
   padding: 5px;
-  margin-left: 40px
+  margin-left: 40px;
 }
+
+table {
+  /* border-collapse: collapse; */
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 90vw;
+}
+
+th,
+td {
+  border: 1px solid #ffffff;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 20px;
+}
+
+th {
+  background-color: rgb(117, 201, 250);
+}
+
+td {
+  background-color: rgb(205, 235, 253);
+}
+
+.trip-form {
+  padding: 20px;
+  border: none;
+}
+
+.select-trip-form {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
+  /* border: none; */
+}
+
+.setLogin-click{
+  margin-top: 20px;
+  color: wheat;
+  text-decoration: underline black 2px solid;
+}
+
+.setLogin-click :focus,
+.setLogin-click :hover{
+  color: wheat;
+  outline: none;
+}
+

@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
+import jwt from "jsonwebtoken";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-function Login({ authenticatedUser, setAuthenticatedUser }) {
+function Login({
+  setUserId,
+  authenticatedUser,
+  setAuthenticatedUser,
+  setLogin,
+}) {
   const [user, setUser] = useState({
     first_name: "",
     last_name: "",
@@ -11,15 +19,17 @@ function Login({ authenticatedUser, setAuthenticatedUser }) {
     phone: "",
   });
 
+  const navigate = useNavigate();
+
   console.log({ user, authenticatedUser });
 
   useEffect(() => {
     const userAsString = localStorage.getItem("user");
 
     if (userAsString) {
-      const user = JSON.parse(userAsString);
+      // const user = JSON.parse(userAsString);
 
-      setAuthenticatedUser(user);
+      setAuthenticatedUser(userAsString);
     }
   }, []);
 
@@ -33,7 +43,7 @@ function Login({ authenticatedUser, setAuthenticatedUser }) {
       body: JSON.stringify({ ...user }),
     };
 
-    fetch("http://localhost:3030/login", fetchOptions)
+    fetch(`${process.env.REACT_APP_FETCH_URL}/login`, fetchOptions)
       .then((res) => res.json())
       .then((data) => {
         const token = data.token;
@@ -42,8 +52,11 @@ function Login({ authenticatedUser, setAuthenticatedUser }) {
 
         if (token) {
           setAuthenticatedUser(token);
-
-          localStorage.setItem("user", token);
+          const decodedToken = jwt.decode(token);
+          setUserId(decodedToken.id);
+          console.log("Inside TOKEN: ", decodedToken);
+          localStorage.setItem("token", token);
+          navigate("/bookings");
         }
       });
   };
@@ -56,46 +69,55 @@ function Login({ authenticatedUser, setAuthenticatedUser }) {
   };
 
   return (
-    <main>
-      <div className="form_container">
-        <form className="form-stack" onSubmit={handleSubmit}>
-          <h2>Login Form</h2>
+    <>
+      <main>
+        <div className="form_container">
           <div>
-            <label htmlFor="email">Email</label>
-          </div>
-          <div>
-            <input
-              className="form_input"
-              type="email"
-              id="email"
-              name="email"
-              onChange={handleChange}
-            />
-          </div>
+            <form className="form-stack" onSubmit={handleSubmit}>
+              <h2 className="login-form-text">Login Form</h2>
+              <div>
+                <label htmlFor="email">Email</label>
+              </div>
+              <div>
+                <input
+                  className="form_input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  onChange={handleChange}
+                />
+              </div>
 
-          <div>
-            <label htmlFor="password">Password</label>
+              <div>
+                <label htmlFor="password">Password</label>
+              </div>
+              <div>
+                <input
+                  className="form_input"
+                  type="password"
+                  id="password"
+                  name="password"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="login-btn">
+              <div><Button variant="outlined" type="submit">
+                Login
+              </Button></div>              
+              <div><Button variant="contained" onClick={() => setLogin(false)}>
+                Return
+              </Button></div>
+              </div>
+            </form>
           </div>
-          <div>
-            <input
-              className="form_input"
-              type="password"
-              id="password"
-              name="password"
-              onChange={handleChange}
-            />
+          <div className="signup-ui">
+            {!authenticatedUser ? (
+              <h2 className="auth-msg">Successfully logged in</h2>
+            ) : null}
           </div>
-          <button className="login-btn" type="submit">
-            Login
-          </button>
-        </form>
-      </div>
-      <h3>Already registerd, login here</h3>
-      {/* <div>
-      {authenticatedUser ? <div>Secret</div> : null}
-      </div> */}
-      {/* {authenticatedUser && <div>Secret</div>} //same as above */}
-    </main>
+        </div>
+      </main>
+    </>
   );
 }
 export default Login;
