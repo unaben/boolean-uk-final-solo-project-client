@@ -162,12 +162,10 @@ export default function Signup({
                   Signup
                 </Button>
                 <h3 className="signup-msg">Create a free account</h3>
-              </form>
-            </div>
-            <div>
-              <h3 className="setLogin-click" onClick={() => setLogin(true)}>
-                Already registered?click to login
+                <h3 className="setLogin-click" >
+                Already registered?<span onClick={() => setLogin(true)}>click to login</span>
               </h3>
+              </form>
             </div>
           </div>
           <div className="signup-ui">
