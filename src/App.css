@@ -272,13 +272,12 @@ td {
 
 .setLogin-click{
   margin-top: 20px;
-  color: wheat;
   text-decoration: underline black 2px solid;
 }
 
-.setLogin-click :focus,
-.setLogin-click :hover{
-  color: wheat;
+span :focus,
+span :hover{
+  color: blue;
   outline: none;
 }
 
