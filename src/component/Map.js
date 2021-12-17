@@ -2,12 +2,15 @@ import { useRef, useEffect, useState } from "react";
 import * as tt from "@tomtom-international/web-sdk-maps";
 import * as ttapi from "@tomtom-international/web-sdk-services";
 import "@tomtom-international/web-sdk-maps/dist/maps.css";
+import { useNavigate } from "react-router";
 const Map = () => {
   const mapElement = useRef();
   const [map, setMap] = useState({});
   const [longitude, setLongitude] = useState(-0.140634);
   const [latitude, setLatitude] = useState(51.501476);
-  const [ completedBookings,setCompletedBookings] = useState("")
+  const [completedBookings, setCompletedBookings] = useState("");
+
+  const navigate = useNavigate()
 
   const convertToPoints = (lngLat) => {
     return {
@@ -158,6 +161,7 @@ const Map = () => {
           <div className="search-bar">
             <h2>Where to?</h2>
             <input
+              className="map-input"
               type="text"
               id="longitude"
               className="longitude"
@@ -167,6 +171,7 @@ const Map = () => {
               }}
             />
             <input
+              className="map-input"
               type="text"
               id="latitude"
               className="latitude"
@@ -176,14 +181,19 @@ const Map = () => {
               }}
             />
           </div>
-          <button className="map-btn" onClick={() => {
-            setCompletedBookings("Booking completed!")
-          }}>
+          <button
+            className="map-btn"
+            onClick={() => {
+              setCompletedBookings("Booking completed!");
+              navigate("/trips")
+
+            }}
+          >
             Book your journey
           </button>
-        </div>      
+        </div>
       )}
-        <h3>{completedBookings}</h3>
+      <h3>{completedBookings}</h3>
     </>
   );
 };
