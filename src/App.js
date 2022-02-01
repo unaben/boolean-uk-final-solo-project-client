@@ -5,7 +5,7 @@ import Header from "./component/Header";
 import Footer from "./component/Footer";
 import Map from "./component/Map";
 import Booking from "./component/Booking";
-import Admin from "./component/pages/Admin";
+import Admin from "./component/Admin"
 import Trip from "./component/Trip";
 import { Auth } from "./component/Auth";
 import Taxi from "./component/Taxi";

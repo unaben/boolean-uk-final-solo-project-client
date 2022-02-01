@@ -101,12 +101,16 @@ function Login({
                 />
               </div>
               <div className="login-btn">
-              <div><Button variant="outlined" type="submit">
-                Login
-              </Button></div>              
-              <div><Button variant="contained" onClick={() => setLogin(false)}>
-                Return
-              </Button></div>
+                <div>
+                  <Button variant="outlined" type="submit">
+                    Login
+                  </Button>
+                </div>
+                <div>
+                  <Button variant="contained" onClick={() => setLogin(false)}>
+                    Return
+                  </Button>
+                </div>
               </div>
             </form>
           </div>

@@ -22,42 +22,7 @@ function EditBookingThead({
         </th>
         <th>
           <h2>Status</h2>
-        </th>
-        {/* <th>
-          <select
-            className="selectDriver-form"
-            name="driver"
-            id="driver"
-            value={selectedDriver}
-            onChange={(event) => {
-              const driverToSelect = drivers.find(
-                (driver) => driver.id === parseInt(event.target.value)
-              );
-              setSelectedDriver(driverToSelect);
-            }}
-          >
-            <option value="">Select a driver</option>
-            {drivers.sort().map((driver) => (
-              <option value={driver.id}>{driver.name}</option>
-            ))}
-          </select>
-        </th>
-        <th>
-          <select
-            className="selectDriver-form"
-            name="status"
-            id="status"
-            value={status}
-            onChange={(e) => {
-              setStatus(e.target.value);
-            }}
-          >
-            <option value="">Display Status</option>
-            {CurrentStatus.sort().map((data) => (
-              <option>{data.value}</option>
-            ))}
-          </select>
-        </th> */}
+        </th>       
         <th>
           <h2>Buttons</h2>
         </th>

@@ -183,14 +183,14 @@ const Map = () => {
           </div>
           <button
             className="map-btn"
-            onClick={() => {
-              setCompletedBookings("Booking completed!");
+            onClick={(e) => {
+              e.preventDefault()
               navigate("/trips")
-
             }}
           >
             Book your journey
           </button>
+         
         </div>
       )}
       <h3>{completedBookings}</h3>

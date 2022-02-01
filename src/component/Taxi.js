@@ -98,6 +98,7 @@ function Taxi({ taxis, setTaxis, contacts }) {
       });
   };
   const newTaxis = new Set(taxis.map((taxi) => taxi.business_name));
+;
   return (
     <>
       <form className="trip-form">
@@ -110,7 +111,7 @@ function Taxi({ taxis, setTaxis, contacts }) {
         >
           <option value="">Filter By Business Name</option>
           {newTaxis.map((taxi) => (
-            <option value={taxi.business_name}>{taxi.business_name}</option>
+            <option value={taxi}>{taxi}</option>
           ))}
         </select>
       </form>

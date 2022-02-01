@@ -112,7 +112,11 @@ function Trip({ trips, setTrips, drivers }) {
         setTrips(updatedTrips);
       });
   };
-  const newTrips = new Set(trips.map((trip) => trip.status));
+  const newTrips = [...new Set(trips)].sort().map((trip) => trip.status)
+
+  console.log({newTrips: newTrips, trips: trips});
+
+
   return (
     <>
       <form className="trip-form">
@@ -123,9 +127,9 @@ function Trip({ trips, setTrips, drivers }) {
           id="filter-by-status"
           value={selectedStatus}
         >
-          <option value="">Filter By Status</option>
+          <option value={""}>Filter By Status</option>
           {newTrips.map((trip) => (
-            <option value={trip.status}>{trip.status}</option>
+            <option value={trip}>{trip}</option>
           ))}
         </select>
       </form>
