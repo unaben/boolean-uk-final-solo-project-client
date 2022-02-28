@@ -97,8 +97,12 @@ function Taxi({ taxis, setTaxis, contacts }) {
         setTaxis(updatedTaxis);
       });
   };
-  const newTaxis = new Set(taxis.map((taxi) => taxi.business_name));
-;
+
+  const newTaxis = taxis.map((taxi) => taxi.business_name).sort();
+  console.log("newTaxi :", newTaxis);
+
+  const taxiSet = [...new Set(newTaxis)];
+  console.log(taxiSet);
   return (
     <>
       <form className="trip-form">
@@ -110,8 +114,10 @@ function Taxi({ taxis, setTaxis, contacts }) {
           value={selectedTaxi}
         >
           <option value="">Filter By Business Name</option>
-          {newTaxis.map((taxi) => (
-            <option value={taxi}>{taxi}</option>
+          {taxiSet.map((taxi, index) => (
+            <option key={index} value={taxi}>
+              {taxi}
+            </option>
           ))}
         </select>
       </form>

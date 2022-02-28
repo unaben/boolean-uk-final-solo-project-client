@@ -18,19 +18,10 @@ function EditBookingTbody({ trip, handleEditClick, handleDelete, id }) {
         <td>
           <h3>{trip.status}</h3>
         </td>
-        {/* <td>
-          <h3>{trip.status}</h3>
-        </td>
-        <td>
-          <h3>{trip.status}</h3>
-        </td> */}
         <td>
           <Button onClick={(event) => handleEditClick(event, trip)}>
             Edit
           </Button>
-          {/* <button onClick={(event) => handleEditClick(event, trip)}>
-            Edit
-          </button> */}
           <FaTrashAlt
             className="delete-btn"
             role="button"

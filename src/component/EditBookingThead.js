@@ -1,13 +1,6 @@
 import React from "react";
 
-function EditBookingThead({
-  selectedDriver,
-  setSelectedDriver,
-  status,
-  setStatus,
-  CurrentStatus,
-  drivers,
-}) {
+function EditBookingThead() {
   return (
     <>
       <tr>
@@ -22,7 +15,7 @@ function EditBookingThead({
         </th>
         <th>
           <h2>Status</h2>
-        </th>       
+        </th>
         <th>
           <h2>Buttons</h2>
         </th>

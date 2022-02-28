@@ -29,7 +29,7 @@ export default function Signup({
 
       setAuthenticatedUser(user);
     }
-  }, []);
+  }, );
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -150,8 +150,8 @@ export default function Signup({
                 </div>
                 <div>
                   <input
-                    className="form_input"
-                    className="last_form_input"
+                    className="form_input last_form_input"
+                    // className="last_form_input"
                     type="text"
                     id="phone"
                     name="phone"

@@ -31,7 +31,7 @@ function Login({
 
       setAuthenticatedUser(userAsString);
     }
-  }, []);
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();

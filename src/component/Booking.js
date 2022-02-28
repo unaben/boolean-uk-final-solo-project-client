@@ -49,7 +49,7 @@ const navigate =useNavigate()
         console.log({ InsideFetch: tripData });
         console.log("Trip", trips);
         setTrips([...trips, tripData]);
-        navigate("/bookings/map")
+        navigate("/bookings/advert")
       });
   }
   return (
@@ -159,36 +159,7 @@ const navigate =useNavigate()
             </button>
           </div>
         </form>
-      </div>
-      <div className="ui-container">
-        <div>
-          <h3 className="booking-ui">Selected Taxi: {selectedTaxi}</h3>
-        </div>
-        <div>
-          <h3 className="booking-ui">Driver's Name: {selectedDriver.name}</h3>
-        </div>
-        <div>
-          <h3 className="booking-ui">
-            Car Type: {selectedDriver.car_category}
-          </h3>
-        </div>
-        <div>
-          <h3 className="booking-ui">Selected Time: {selectedDateTimeInput}</h3>
-        </div>
-        <div>
-          <h3 className="booking-ui">
-            Pickup Location: {selectedPickupPostcode}
-          </h3>
-        </div>
-        <div>
-          <h3 className="booking-ui">
-            Dropoff Location: {selectedDropoffPostcode}
-          </h3>
-        </div>
-        <div>
-          <h3 className="booking-ui">Status: {status}</h3>
-        </div>
-      </div>
+      </div>     
     </div>
   );
 }

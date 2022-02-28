@@ -3,13 +3,13 @@ import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
-import Map from "./component/Map";
 import Booking from "./component/Booking";
 import Admin from "./component/Admin"
 import Trip from "./component/Trip";
 import { Auth } from "./component/Auth";
 import Taxi from "./component/Taxi";
 import jwt from "jsonwebtoken";
+import Advert from "./component/Advert";
 
 const App = () => {
   const [authenticatedUser, setAuthenticatedUser] = useState(null);
@@ -115,7 +115,7 @@ const App = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/bookings">Bookings</Link>
+                <Link to="/bookings"></Link>
               </li>
               <li>
                 <Link to="/trips">Trips</Link>
@@ -128,7 +128,7 @@ const App = () => {
       </header>
       <main>
         <Routes>
-          <Route exact path="/bookings/map" element={<Map />} />
+          <Route exact path="/bookings/advert" element={<Advert />} />
           <Route
             exact
             path="/bookings"
