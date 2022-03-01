@@ -3,19 +3,8 @@ import EditBookingInput from "./EditBookingInput";
 import EditBookingThead from "./EditBookingThead";
 import EditBookingTbody from "./EditBookingTbody";
 
-const CurrentStatus = [
-  { value: "Passenger_Onboard" },
-  { value: "Arrived" },
-  { value: "Delayed" },
-  { value: "Completed" },
-  { value: "On_time" },
-  { value: "Declined" },
-  { value: "Cancelled" },
-];
-
 function Trip({ trips, setTrips, drivers }) {
-  const [selectedDriver, setSelectedDriver] = useState({});
-  const [status, setStatus] = useState();
+ 
   const [editTripData, setEditTripData] = useState({
     pickup_postcode: "",
     pickup_time: "",
@@ -26,8 +15,7 @@ function Trip({ trips, setTrips, drivers }) {
   const [selectedStatus, setSelectedStatus] = useState("");
   console.log({
     editTripData: editTripData,
-    editTripId: editTripId,
-    selectedDriver: selectedDriver,
+    editTripId: editTripId,    
     selectedStatus: selectedStatus,
   });
 
