@@ -7,7 +7,7 @@ function Login({
   setUserId,
   authenticatedUser,
   setAuthenticatedUser,
-  setLogin,
+  setIsLoggedin,
 }) {
   const [user, setUser] = useState({
     first_name: "",
@@ -107,7 +107,10 @@ function Login({
                   </Button>
                 </div>
                 <div>
-                  <Button variant="contained" onClick={() => setLogin(false)}>
+                  <Button
+                    variant="contained"
+                    onClick={() => setIsLoggedin(false)}
+                  >
                     Return
                   </Button>
                 </div>

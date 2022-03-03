@@ -6,24 +6,24 @@ export const Auth = ({
   setUserId,
   authenticatedUser,
   setAuthenticatedUser,
-  login,
-  setLogin
+  IsLoggedin,
+  setIsLoggedin
 }) => {
   return (
     <>
       <div className="auth">
-        {!login ? (
+        {!IsLoggedin ? (
           <Signup
             authenticatedUser={authenticatedUser}
             setAuthenticatedUser={setAuthenticatedUser}
-            setLogin={setLogin}
+            setIsLoggedin={setIsLoggedin}
           />
         ) : (
           <Login
             authenticatedUser={authenticatedUser}
             setAuthenticatedUser={setAuthenticatedUser}
             setUserId={setUserId}
-            setLogin={setLogin}
+            setIsLoggedin={setIsLoggedin}
           />
         )}
       </div>

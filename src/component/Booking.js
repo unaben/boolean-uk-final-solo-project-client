@@ -56,6 +56,7 @@ const navigate =useNavigate()
     <div className="bookingForm-container">
       <div>
         <form className="booking-form" onSubmit={handleSubmit}>
+        <div className="select_container">
           <div>
             <select
               className="bookingForm-dropdown"
@@ -105,6 +106,7 @@ const navigate =useNavigate()
                 <option value={driver.id}>{driver.car_category}</option>
               ))}
             </select>
+          </div>
           </div>
           <div>
             <label className="bookinginput" htmlFor="pickup_postcode">

@@ -98,7 +98,7 @@ function Taxi({ taxis, setTaxis, contacts }) {
       });
   };
 
-  const newTaxis = taxis.map((taxi) => taxi.business_name).sort();
+  const newTaxis = taxis && taxis.map((taxi) => taxi.business_name).sort();
   console.log("newTaxi :", newTaxis);
 
   const taxiSet = [...new Set(newTaxis)];
@@ -114,7 +114,7 @@ function Taxi({ taxis, setTaxis, contacts }) {
           value={selectedTaxi}
         >
           <option value="">Filter By Business Name</option>
-          {taxiSet.map((taxi, index) => (
+          {taxiSet && taxiSet.map((taxi, index) => (
             <option key={index} value={taxi}>
               {taxi}
             </option>

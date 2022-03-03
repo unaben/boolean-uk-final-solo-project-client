@@ -18,7 +18,7 @@ const App = () => {
   const [contacts, setContacts] = useState([]);
   const [trips, setTrips] = useState([]);
   const [userId, setUserId] = useState(null);
-  const [login, setLogin] = useState(false);
+  const [IsLoggedin, setIsLoggedin] = useState(false);
   console.log({
     auth: authenticatedUser,
     taxi: taxis,
@@ -106,22 +106,22 @@ const App = () => {
 
   return (
     <>
-        <div className="app-container">      
+      <div className="app-container">      
       <header>
         <Header />
           <nav>
             <ul className="ul-path">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">User</Link>
+              </li>
+              <li>
+                <Link to="/admin">Admin</Link>
               </li>
               <li>
                 <Link to="/bookings"></Link>
               </li>
               <li>
-                <Link to="/trips">Trips</Link>
-              </li>
-              <li>
-                <Link to="/admin">Admin</Link>
+                <Link to="/trips"></Link>
               </li>
             </ul>
           </nav>       
@@ -150,8 +150,8 @@ const App = () => {
                 authenticatedUser={authenticatedUser}
                 setAuthenticatedUser={setAuthenticatedUser}
                 setUserId={setUserId}
-                login={login}
-                setLogin={setLogin}
+                IsLoggedin={IsLoggedin}
+                setIsLoggedin={setIsLoggedin}
               />
             }
           />

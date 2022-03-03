@@ -12,23 +12,39 @@ body {
   width: 100vw;
 }
 
-footer{
+footer {
   height: 50px;
 }
 
-header{
-display: grid;
-grid-auto-flow: column;
-align-items: center;
-} 
+header {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
 
-.admin{
+.reg_column {
+  display: grid;
+  grid-auto-flow: column;
+  margin-bottom: 10px;
+}
+
+.signup_btn_contanier {
+  align-self: center;
+}
+
+.admin {
   margin-right: auto;
   margin-left: auto;
 }
 
-.bottom{
-margin-bottom: 10px;
+.bottom {
+  margin-bottom: 10px;
+}
+
+@media screen and(max-width:400px) {
+  .form_container{
+    width: fit-content;
+  }
 }
 
 .app-container {
@@ -41,6 +57,16 @@ margin-bottom: 10px;
   overflow-y: scroll;
   height: calc(100vh);
   scroll-behavior: smooth;
+  background-size: cover;
+  background-position: bottom;
+  display: grid;
+  place-content: center;
+}
+
+.select_container{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
 }
 
 .auth-msg {
@@ -59,7 +85,11 @@ margin-bottom: 10px;
   margin-bottom: 10px;
 }
 
-.signup-form,
+.signup-form {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .admin-form,
 .login-form-text {
   margin-bottom: 20px;
@@ -67,6 +97,7 @@ margin-bottom: 10px;
 
 .signup-msg {
   margin-top: 20px;
+  text-align: center;
 }
 
 .signup-btn {
@@ -103,14 +134,13 @@ margin-bottom: 10px;
   color: wheat;
 }
 
-.footer-pragh{
+.footer-pragh {
   padding: 30px;
 }
 
 .heading {
   padding: 10px;
   text-align: -webkit-right;
-  
 }
 
 .marker {
@@ -142,6 +172,7 @@ margin-bottom: 10px;
 }
 
 input {
+  margin-right: 10px;
   margin-left: 10px;
   padding: 5px;
   border-radius: 5px;
@@ -271,14 +302,8 @@ td {
   /* border: none; */
 }
 
-.setLogin-click{
+.setLogin-click {
   margin-top: 20px;
   text-decoration: underline black 2px solid;
+  text-align: center;
 }
-
-span :focus,
-span :hover{
-  color: blue;
-  outline: none;
-}
-

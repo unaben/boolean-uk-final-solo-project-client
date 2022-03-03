@@ -9,17 +9,17 @@ export default function Advert() {
 
   const navigate = useNavigate();
   return (
-    <div style={{ margin: "20px, auto", alignContent: "center" }}>
+    <div style={{display: "grid", placeContent: 'center' }}>
       <div>
-        <h1 style={{ color: "wheat", textAlign: "center" }}>
+        <h3 style={{ color: "wheat", textAlign: "center" }}>
           Booking Completed
-        </h1>
+        </h3>
         <div style={{ textAlign: "-webkit-center" }}>
           <img
             src={image}
             alt="taxi_image"
             style={{
-              width: "700px",
+              width: "1000px",
               height: "400px",
               borderRadius: "10px",
               alignSelf: "center",
@@ -28,7 +28,7 @@ export default function Advert() {
             }}
           />
         </div>
-        <div style={{display:"grid", gridAutoFlow:"column", textAlign: "-webkit-center"}}>
+        <div style={{display:"grid", gridTemplateColumns: "1fr 1fr", justifyItems: 'center'}}>
         <div >
           <Button
             variant="outlined"
@@ -38,7 +38,7 @@ export default function Advert() {
               navigate("/");
             }}
           >
-            Back to homePage
+            Back to home
           </Button>
         </div>
         <div >
@@ -50,7 +50,7 @@ export default function Advert() {
               navigate("/trips");
             }}
           >
-           View trip status
+           All trips 
           </Button>
         </div>
         </div>
