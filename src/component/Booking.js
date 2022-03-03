@@ -68,7 +68,7 @@ const navigate =useNavigate()
               }}
             >
               <option value="">Display Status</option>
-              {trips.sort().map((data) => (
+              {trips && trips.sort().map((data) => (
                 <option>{data.status}</option>
               ))}
             </select>
