@@ -184,11 +184,6 @@ export default function Signup({
               </form>
             </div>
           </div>
-          <div className="signup-ui">
-            {!authenticatedUser ? (
-              <h2 className="auth-msg">Successfully signed up</h2>
-            ) : null}
-          </div>
         </div>
       </main>
     </>
