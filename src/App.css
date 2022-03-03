@@ -41,11 +41,7 @@ header {
   margin-bottom: 10px;
 }
 
-@media screen and(max-width:400px) {
-  .form_container{
-    width: fit-content;
-  }
-}
+
 
 .app-container {
   background-image: url("https://www.transparenttextures.com/patterns/polonez-pattern.png");
