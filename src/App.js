@@ -105,7 +105,7 @@ const App = () => {
 
   return (
     <>
-      <div className="container app_container">
+      <div className=" app_container">
         {/* <div className="app-container"> */}
         <Header />
         <Routes>
