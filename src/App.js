@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-// import Header from "./component/Header";
-// import Footer from "./component/Footer";
 import Booking from "./component/Booking";
 import Admin from "./component/Admin";
 import Trip from "./component/Trip";
@@ -107,57 +105,57 @@ const App = () => {
 
   return (
     <>
-      <div className="app_container">
+      <div className="container app_container">
         {/* <div className="app-container"> */}
-          <Header />
-          <Routes>
-            <Route exact path="/bookings/advert" element={<Advert />} />
-            <Route
-              exact
-              path="/bookings"
-              element={
-                <Booking
-                  taxis={taxis}
-                  drivers={drivers}
-                  trips={trips}
-                  setTrips={setTrips}
-                  userId={userId}
-                />
-              }
-            />
-            <Route
-              exact
-              path="/"
-              element={
-                <Auth
-                  authenticatedUser={authenticatedUser}
-                  setAuthenticatedUser={setAuthenticatedUser}
-                  setUserId={setUserId}
-                  IsLoggedin={IsLoggedin}
-                  setIsLoggedin={setIsLoggedin}
-                />
-              }
-            />
-            <Route
-              exact
-              path="/trips"
-              element={
-                <Trip trips={trips} setTrips={setTrips} drivers={drivers} />
-              }
-            />
-            <Route
-              exact
-              path="/admin"
-              element={<Admin taxis={taxis} setTaxis={setTaxis} />}
-            />
-            <Route
-              exact
-              path="/admin/edit"
-              element={
-                <Taxi taxis={taxis} setTaxis={setTaxis} contacts={contacts} />
-              }
-            />
-          </Routes>
+        <Header />
+        <Routes>
+          <Route exact path="/bookings/advert" element={<Advert />} />
+          <Route
+            exact
+            path="/bookings"
+            element={
+              <Booking
+                taxis={taxis}
+                drivers={drivers}
+                trips={trips}
+                setTrips={setTrips}
+                userId={userId}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/"
+            element={
+              <Auth
+                authenticatedUser={authenticatedUser}
+                setAuthenticatedUser={setAuthenticatedUser}
+                setUserId={setUserId}
+                IsLoggedin={IsLoggedin}
+                setIsLoggedin={setIsLoggedin}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/trips"
+            element={
+              <Trip trips={trips} setTrips={setTrips} drivers={drivers} />
+            }
+          />
+          <Route
+            exact
+            path="/admin"
+            element={<Admin taxis={taxis} setTaxis={setTaxis} />}
+          />
+          <Route
+            exact
+            path="/admin/edit"
+            element={
+              <Taxi taxis={taxis} setTaxis={setTaxis} contacts={contacts} />
+            }
+          />
+        </Routes>
         {/* </div> */}
         <footer></footer>
       </div>

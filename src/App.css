@@ -52,6 +52,14 @@
   .select_container {
     grid-auto-flow: row;
   }
+
+  .app_container{
+    height: fit-content;
+  }
+
+  img{
+    width: 500px;
+  }
 }
 
 /* Header containet */
