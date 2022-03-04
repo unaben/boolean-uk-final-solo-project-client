@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 
+
 function Admin({ taxis, setTaxis }) {
   const navigate = useNavigate();
 
@@ -45,6 +46,7 @@ function Admin({ taxis, setTaxis }) {
   };
   return (
     <>
+    
       <section>
         <div className="form_container">
           <form className="form-stack" onSubmit={handleSubmit}>
@@ -115,6 +117,7 @@ function Admin({ taxis, setTaxis }) {
           </form>
         </div>
       </section>
+      
     </>
   );
 }

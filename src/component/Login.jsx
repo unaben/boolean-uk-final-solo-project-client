@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import jwt from "jsonwebtoken";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
+// import Footer from "./Footer";
+// import Header from "./Header";
 
 function Login({
   setUserId,
@@ -70,6 +73,7 @@ function Login({
 
   return (
     <>
+   
       <main>
         <div className="form_container">
           <div>
@@ -117,13 +121,9 @@ function Login({
               </div>
             </form>
           </div>
-          <div className="signup-ui">
-            {!authenticatedUser ? (
-              <h2 className="auth-msg">Successfully logged in</h2>
-            ) : null}
-          </div>
         </div>
       </main>
+      <Footer />    
     </>
   );
 }

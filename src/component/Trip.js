@@ -3,6 +3,7 @@ import EditBookingInput from "./EditBookingInput";
 import EditBookingThead from "./EditBookingThead";
 import EditBookingTbody from "./EditBookingTbody";
 
+
 function Trip({ trips, setTrips, drivers }) {
  
   const [editTripData, setEditTripData] = useState({
@@ -109,6 +110,7 @@ function Trip({ trips, setTrips, drivers }) {
 
   return (
     <>
+  
       <form className="trip-form">
         <select
           className="select-trip-form"
@@ -163,6 +165,7 @@ function Trip({ trips, setTrips, drivers }) {
             ))}
         </tbody>
       </table>
+     
     </>
   );
 }

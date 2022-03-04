@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {useNavigate} from "react-router-dom"
 
+
 function Booking({ taxis, drivers, trips, setTrips, userId }) {
   const [selectedTaxi, setSelectedTaxi] = useState("");
   const [selectedDriver, setSelectedDriver] = useState({});
@@ -53,6 +54,9 @@ const navigate =useNavigate()
       });
   }
   return (
+    <>
+     
+   
     <div className="bookingForm-container">
       <div>
         <form className="booking-form" onSubmit={handleSubmit}>
@@ -163,6 +167,8 @@ const navigate =useNavigate()
         </form>
       </div>     
     </div>
+    
+    </>
   );
 }
 export default Booking;

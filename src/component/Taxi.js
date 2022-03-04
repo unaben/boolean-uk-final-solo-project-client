@@ -3,6 +3,7 @@ import EditTaxi from "./EditTaxi";
 import EditTaxiInput from "./EditTaxiInput";
 import EditTaxiThead from "./EditTaxiThead";
 
+
 function Taxi({ taxis, setTaxis, contacts }) {
   console.log({ taxis, contacts });
   const [editTaxiData, setEditTaxiData] = useState({
@@ -105,6 +106,7 @@ function Taxi({ taxis, setTaxis, contacts }) {
   console.log(taxiSet);
   return (
     <>
+    
       <form className="trip-form">
         <select
           className="select-trip-form"
@@ -159,6 +161,7 @@ function Taxi({ taxis, setTaxis, contacts }) {
             ))}
         </tbody>
       </table>
+     
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
+import Footer from "./Footer";
 
 export default function Signup({
   authenticatedUser,
@@ -66,126 +67,122 @@ export default function Signup({
 
   return (
     <>
-      <main>
-        <div className="main-container">
-          <div>
-            <div className="form_container">
-              <form className="form-stack" onSubmit={handleSubmit}>
-                <h2 className="signup-form">Registration Form</h2>
-                <div className="reg_column">
-                  <div>
-                    <label htmlFor="first_name">First Name</label>
-                    <div>
-                      <input
-                        className="form_input"
-                        type="text"
-                        id="first_name"
-                        name="first_name"
-                        onChange={handleChange}
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="last_name">Last Name</label>
-                  
-                  <div>
-                    <input
-                      className="form_input"
-                      type="text"
-                      id="last_name"
-                      name="last_name"
-                      onChange={handleChange}
-                    />
-                  </div>
-                  </div>
-                </div>
-                <div className="reg_column">
-                  <div>
-                    <label htmlFor="email">Email</label>
-                 
-                  <div>
-                    <input
-                      className="form_input"
-                      type="email"
-                      id="email"
-                      name="email"
-                      onChange={handleChange}
-                    />
-                  </div>
-                  </div>
-                  <div>
-                    <label htmlFor="password">Password</label>
-                  
-                  <div>
-                    <input
-                      className="form_input"
-                      type="password"
-                      id="password"
-                      name="password"
-                      onChange={handleChange}
-                    />
-                  </div>
-                  </div>
-                </div>
-                <div className="reg_column">
-                  <div>
-                    <label htmlFor="password">Postcode</label>
-                  
-                  <div>
-                    <input
-                      className="form_input"
-                      type="text"
-                      id="postcode"
-                      name="postcode"
-                      onChange={handleChange}
-                    />
-                  </div>
-                  </div>
-                  <div>
-                    <label htmlFor="street">Street</label>
-                  
-                  <div>
-                    <input
-                      className="form_input"
-                      type="text"
-                      id="street"
-                      name="street"
-                      onChange={handleChange}
-                    />
-                  </div>
-                  </div>
-                </div>
-                <div className="reg_column">
+      <div className="main-container">
+        <div className="form_container">
+          <form className="form-stack" onSubmit={handleSubmit}>
+            <h2 className="signup-form">Registration Form</h2>
+            <div className="reg_column">
+              <div>
+                <label htmlFor="first_name">First Name</label>
                 <div>
-                  <label htmlFor="phone">Phone</label>
-               
+                  <input
+                    className="form_input"
+                    type="text"
+                    id="first_name"
+                    name="first_name"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="last_name">Last Name</label>
+
+                <div>
+                  <input
+                    className="form_input"
+                    type="text"
+                    id="last_name"
+                    name="last_name"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="reg_column">
+              <div>
+                <label htmlFor="email">Email</label>
+
+                <div>
+                  <input
+                    className="form_input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="password">Password</label>
+
+                <div>
+                  <input
+                    className="form_input"
+                    type="password"
+                    id="password"
+                    name="password"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="reg_column">
+              <div>
+                <label htmlFor="password">Postcode</label>
+
+                <div>
+                  <input
+                    className="form_input"
+                    type="text"
+                    id="postcode"
+                    name="postcode"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="street">Street</label>
+
+                <div>
+                  <input
+                    className="form_input"
+                    type="text"
+                    id="street"
+                    name="street"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="reg_column">
+              <div>
+                <label htmlFor="phone">Phone</label>
+
                 <div>
                   <input
                     className="form_input last_form_input"
-                    // className="last_form_input"
                     type="text"
                     id="phone"
                     name="phone"
                     onChange={handleChange}
                   />
                 </div>
-                </div>
-                <div className="signup_btn_contanier">
+              </div>
+              <div className="signup_btn_contanier">
                 <Button variant="contained" type="submit">
                   Signup
                 </Button>
-                </div>
-                </div>
-                <h3 className="signup-msg">Create a free account</h3>
-                <h3 className="setLogin-click">
-                  Already registered?
-                  <span onClick={() => setIsLoggedin(true)} >click to login</span>
-                </h3>
-              </form>
+              </div>
             </div>
-          </div>
+            <h3 className="signup-msg">Create a free account</h3>
+            <h3 className="setLogin-click">
+              Already registered?
+              <span onClick={() => setIsLoggedin(true)}>click to login</span>
+            </h3>
+          </form>
         </div>
-      </main>
+      </div>
+      <Footer />
     </>
   );
 }

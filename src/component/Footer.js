@@ -12,9 +12,9 @@ function Footer() {
     textAlign:"center",   
   };
   return (
-    <footer style={footerStyle}>
+    <section style={footerStyle}>
       <p className="footer-pragh" >Copyright &copy; {year} </p>
-    </footer>
+    </section>
   );
 }
 export default Footer;

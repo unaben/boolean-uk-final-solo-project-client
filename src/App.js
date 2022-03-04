@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
-import Header from "./component/Header";
-import Footer from "./component/Footer";
+// import Header from "./component/Header";
+// import Footer from "./component/Footer";
 import Booking from "./component/Booking";
 import Admin from "./component/Admin";
 import Trip from "./component/Trip";
@@ -10,6 +10,7 @@ import { Auth } from "./component/Auth";
 import Taxi from "./component/Taxi";
 import jwt from "jsonwebtoken";
 import Advert from "./component/Advert";
+import Header from "./component/Header";
 
 const App = () => {
   const [authenticatedUser, setAuthenticatedUser] = useState(null);
@@ -106,81 +107,59 @@ const App = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="app-container">
-          <header>
-            <Header />
-            <nav>
-              <ul className="ul-path">
-                <li>
-                  <Link to="/">User</Link>
-                </li>
-                <li>
-                  <Link to="/admin">Admin</Link>
-                </li>
-                <li>
-                  <Link to="/bookings"></Link>
-                </li>
-                <li>
-                  <Link to="/trips"></Link>
-                </li>
-              </ul>
-            </nav>
-          </header>
-          <main>
-            <Routes>
-              <Route exact path="/bookings/advert" element={<Advert />} />
-              <Route
-                exact
-                path="/bookings"
-                element={
-                  <Booking
-                    taxis={taxis}
-                    drivers={drivers}
-                    trips={trips}
-                    setTrips={setTrips}
-                    userId={userId}
-                  />
-                }
-              />
-              <Route
-                exact
-                path="/"
-                element={
-                  <Auth
-                    authenticatedUser={authenticatedUser}
-                    setAuthenticatedUser={setAuthenticatedUser}
-                    setUserId={setUserId}
-                    IsLoggedin={IsLoggedin}
-                    setIsLoggedin={setIsLoggedin}
-                  />
-                }
-              />
-              <Route
-                exact
-                path="/trips"
-                element={
-                  <Trip trips={trips} setTrips={setTrips} drivers={drivers} />
-                }
-              />
-              <Route
-                exact
-                path="/admin"
-                element={<Admin taxis={taxis} setTaxis={setTaxis} />}
-              />
-              <Route
-                exact
-                path="/admin/edit"
-                element={
-                  <Taxi taxis={taxis} setTaxis={setTaxis} contacts={contacts} />
-                }
-              />
-            </Routes>
-          </main>
-          <footer>
-            <Footer />
-          </footer>
-        </div>
+      <div className="app_container">
+        {/* <div className="app-container"> */}
+          <Header />
+          <Routes>
+            <Route exact path="/bookings/advert" element={<Advert />} />
+            <Route
+              exact
+              path="/bookings"
+              element={
+                <Booking
+                  taxis={taxis}
+                  drivers={drivers}
+                  trips={trips}
+                  setTrips={setTrips}
+                  userId={userId}
+                />
+              }
+            />
+            <Route
+              exact
+              path="/"
+              element={
+                <Auth
+                  authenticatedUser={authenticatedUser}
+                  setAuthenticatedUser={setAuthenticatedUser}
+                  setUserId={setUserId}
+                  IsLoggedin={IsLoggedin}
+                  setIsLoggedin={setIsLoggedin}
+                />
+              }
+            />
+            <Route
+              exact
+              path="/trips"
+              element={
+                <Trip trips={trips} setTrips={setTrips} drivers={drivers} />
+              }
+            />
+            <Route
+              exact
+              path="/admin"
+              element={<Admin taxis={taxis} setTaxis={setTaxis} />}
+            />
+            <Route
+              exact
+              path="/admin/edit"
+              element={
+                <Taxi taxis={taxis} setTaxis={setTaxis} contacts={contacts} />
+              }
+            />
+          </Routes>
+        {/* </div> */}
+        <footer></footer>
       </div>
     </>
   );

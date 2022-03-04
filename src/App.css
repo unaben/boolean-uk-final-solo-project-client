@@ -7,112 +7,64 @@
   box-sizing: border-box;
 }
 
-body {
+/*App container*/
+
+.app_container {
   height: 100vh;
-  width: 100vw;
-}
-
-footer {
-  height: 50px;
-}
-
-header {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-}
-
-.reg_column {
-  display: grid;
-  grid-auto-flow: column;
-  margin-bottom: 10px;
-}
-
-.signup_btn_contanier {
-  align-self: center;
-}
-
-.admin {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.bottom {
-  margin-bottom: 10px;
-}
-
-
-
-.app-container {
   background-image: url("https://www.transparenttextures.com/patterns/polonez-pattern.png");
-  /* background-color: burlywood; */
   background-color: #005b85;
-  height: 100vh;
-  width: 100vw;
-  /* overflow-y: auto;
-  overflow-y: scroll;
-  height: calc(100vh);
-  scroll-behavior: smooth; */
   background-size: cover;
   background-position: bottom;
   display: grid;
-  place-content: center; 
+  place-content: center;
 }
 
-.select_container{
+/*input*/
+
+.reg_column {
+  display: grid;
+  grid-auto-flow: row;
+  margin-bottom: 10px;
+  /* width: fit-content; */
+}
+
+@media screen and (min-width: 481px) and (max-width: 1700px) {
+  .reg_column {
+    grid-auto-flow: column;
+  }
+  /* .header_container{    
+    padding: 10px 0px;
+  } */
+}
+
+/*select*/
+
+.select_container {
   display: grid;
   grid-auto-flow: column;
   gap: 10px;
 }
 
-.auth-msg {
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
+@media screen and (max-width: 481px) {
+  .header_container {
+    padding: 10px 0px;
+  }
+  .select_container {
+    grid-auto-flow: row;
+  }
 }
 
-.main-container,
-.login-btn {
+/* Header containet */
+
+.header_container {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-auto-flow: column;
 }
 
-.last_form_input {
-  margin-bottom: 10px;
-}
-
-.signup-form {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.admin-form,
-.login-form-text {
-  margin-bottom: 20px;
-}
-
-.signup-msg {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.signup-btn {
-  margin-top: 15px;
-}
-
-.app {
-  height: 80vh;
-  width: 80vw;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.map {
-  height: 75%;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
+li a {
+  text-decoration: none;
+  font-size: large;
+  color: wheat;
 }
 
 .ul-path {
@@ -125,37 +77,78 @@ header {
   margin-right: 50px;
 }
 
-.ul-path li a {
-  font-size: large;
-  color: wheat;
+/*signup*/
+
+.signup_btn_contanier {
+  align-self: center;
 }
 
-.footer-pragh {
-  padding: 30px;
+input {
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
 }
 
-.heading {
+.signup-msg {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signup-btn {
+  margin-top: 15px;
+}
+
+.signup-form {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/*login*/
+
+.admin-form,
+.login-form-text {
+  margin-bottom: 20px;
+}
+
+.login-btn,
+.booking-btn {
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.main-container,
+.login-btn {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.signup-ui,
+.booking-form,
+.booking-ui {
+  padding-left: 20px;
+}
+
+/*admin*/
+
+.trip-form {
+  padding: 20px;
+  border: none;
+}
+
+.select-trip-form {
   padding: 10px;
-  text-align: -webkit-right;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
+  border: none;
 }
 
-.marker {
-  background-image: url("https://i.imgur.com/oz3r3Wq.png");
-  background-size: cover;
-  width: 22px;
-  height: 22px;
-  background-color: yellow;
-  border-radius: 11px;
-  border: solid 3px darkslategray;
-}
-
-.marker-delivery {
-  background-image: url("https://i.imgur.com/cIooqnp.png");
-  background-size: cover;
-  width: 22px;
-  height: 22px;
-  border-radius: 15px;
-  border: solid darkslategrey 3px;
+.setLogin-click {
+  margin-top: 20px;
+  text-decoration: underline black 2px solid;
+  text-align: center;
 }
 
 .search-bar {
@@ -167,36 +160,34 @@ header {
   margin-left: 10px;
 }
 
-input {
-  margin-right: 10px;
-  margin-left: 10px;
-  padding: 5px;
-  border-radius: 5px;
+.app {
+  height: 80vh;
+  width: 80vw;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*auth*/
+
+.auth-msg {
+  padding: 30px;
+  border-radius: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
 }
 
-.delete-btn {
-  cursor: pointer;
-  color: steelblue;
-  width: 48px;
-  min-width: 48px;
-  height: 36px;
-  font: 1rem;
-  padding: 5px;
+.auth-msg {
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
 }
 
-.delete-btn :focus,
-.delete-btn :hover {
-  color: red;
-  outline: none;
-}
-
-.auth,
+/* .auth, */
 .bookingForm-container {
-  display: grid;
+  /* display: grid;
   grid-auto-flow: column;
-  justify-content: center;
-  gap: 10px;
+  justify-content: center; */
+  /* gap: 10px; */
 }
 
 .ui-container {
@@ -205,17 +196,6 @@ input {
   border-radius: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
   height: fit-content;
-}
-
-.form_container {
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgb(221, 230, 221);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
-  width: fit-content;
 }
 
 .login-btn,
@@ -254,16 +234,29 @@ input {
   margin-left: 10px;
 }
 
-.map-btn {
-  /* display: grid; */
-  margin-top: 10px;
-  border-radius: 5px;
-  padding: 5px;
-  margin-left: 40px;
+.last_form_input {
+  margin-bottom: 10px;
 }
 
+/*sign-up*/
+
+/*form*/
+
+.form_container {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(221, 230, 221);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
+  width: fit-content;
+}
+
+/* tables */
+
 table {
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
   padding-left: 20px;
   padding-right: 20px;
   width: 90vw;
@@ -285,21 +278,26 @@ th {
 td {
   background-color: rgb(205, 235, 253);
 }
-
-.trip-form {
-  padding: 20px;
-  border: none;
+.delete-btn {
+  cursor: pointer;
+  color: steelblue;
+  width: 48px;
+  min-width: 48px;
+  height: 36px;
+  font: 1rem;
+  padding: 5px;
 }
 
-.select-trip-form {
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
-  /* border: none; */
+.delete-btn :focus,
+.delete-btn :hover {
+  color: red;
+  outline: none;
 }
 
-.setLogin-click {
-  margin-top: 20px;
-  text-decoration: underline black 2px solid;
-  text-align: center;
+footer {
+  height: 50px;
+}
+
+.bottom {
+  margin-bottom: 10px;
 }
