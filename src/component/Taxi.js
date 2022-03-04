@@ -87,8 +87,6 @@ function Taxi({ taxis, setTaxis, contacts }) {
   };
 
   const handleDelete = (id) => {
-    console.log({ handleDelete: id });
-
     fetch(`${process.env.REACT_APP_FETCH_URL}/taxis/${id}`, {
       method: "DELETE",
     })
