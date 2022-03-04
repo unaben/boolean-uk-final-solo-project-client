@@ -32,8 +32,7 @@ const App = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log({ Signup: data });
-        setAuthenticatedUser(data);
+        data && setAuthenticatedUser(data);
       });
   }
 
@@ -42,8 +41,7 @@ const App = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log({ login: data });
-        setAuthenticatedUser(data);
+        data && setAuthenticatedUser(data);
       });
   }
 
@@ -52,8 +50,7 @@ const App = () => {
     fetch(url)
       .then((res) => res.json())
       .then((taxiData) => {
-        // console.log({ taxiData: taxiData });
-        setTaxis(taxiData);
+        taxiData && setTaxis(taxiData);
       });
   }
 
@@ -62,8 +59,7 @@ const App = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log({ diverData: data });
-        setDrivers(data);
+        data && setDrivers(data);
       });
   }
 
@@ -72,8 +68,7 @@ const App = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log({ contactData: data });
-        setContacts(data);
+        data && setContacts(data);
       });
   }
 
@@ -82,8 +77,7 @@ const App = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setTrips(data);
+        data && setTrips(data);
       });
   }
   useEffect(() => {
@@ -97,8 +91,7 @@ const App = () => {
       const token = localStorage.getItem("user");
       if (token) {
         const decodedToken = jwt.decode(token);
-        console.log("decoded: ", decodedToken);
-        setUserId(decodedToken.id);
+        decodedToken && setUserId(decodedToken.id);
       }
     }
   }, []);
@@ -155,8 +148,7 @@ const App = () => {
               <Taxi taxis={taxis} setTaxis={setTaxis} contacts={contacts} />
             }
           />
-        </Routes>
-        {/* </div> */}
+        </Routes>        
         <footer></footer>
       </div>
     </>
