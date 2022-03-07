@@ -13,6 +13,7 @@ function Footer() {
   };
   return (
     <section style={footerStyle}>
+    
       <p className="footer-pragh" >Copyright &copy; {year} </p>
     </section>
   );
