@@ -9,8 +9,8 @@ function EditBookingTbody({ trip, handleEditClick, handleDelete, id }) {
         <td>
           <h3>{trip.pickup_postcode}</h3>
         </td>
-        <td>
-          <h3>{trip.pickup_time}</h3>
+        <td className="time">
+          <h3 className="time">{trip.pickup_time}</h3>
         </td>
         <td>
           <h3>{trip.dropoff_postcode}</h3>

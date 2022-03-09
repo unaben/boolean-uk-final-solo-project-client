@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 function Header() {
-  const headerStyle = {
+
+  const headerStyle = { 
     color: "wheat",
   };
   return (
@@ -22,7 +23,8 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </section>
+    </section> 
+ 
   );
 }
 export default Header;

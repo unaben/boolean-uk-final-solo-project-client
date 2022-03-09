@@ -9,6 +9,7 @@ import Taxi from "./component/Taxi";
 import jwt from "jsonwebtoken";
 import Advert from "./component/Advert";
 import Header from "./component/Header";
+import Footer from "./component/Footer";
 
 const App = () => {
   const [authenticatedUser, setAuthenticatedUser] = useState(null);
@@ -98,10 +99,13 @@ const App = () => {
 
   return (
     <>
-      <div className=" app_container">
-        {/* <div className="app-container"> */}
+      <div className="app_container">
+      <div className="header">
         <Header />
-        <Routes>
+      </div>
+      
+      <div>
+      <Routes>
           <Route exact path="/bookings/advert" element={<Advert />} />
           <Route
             exact
@@ -148,9 +152,12 @@ const App = () => {
               <Taxi taxis={taxis} setTaxis={setTaxis} contacts={contacts} />
             }
           />
-        </Routes>        
-        <footer></footer>
+        </Routes> 
+      </div>      
+      <div>
+        <Footer />
       </div>
+    </div>
     </>
   );
 };

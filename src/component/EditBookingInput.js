@@ -19,8 +19,9 @@ function EditBookingInput({
           onChange={handleEditFormChange}
         ></input>
       </td>
-      <td>
+      <td className="time">
         <input
+          className="time"
           type="text"
           required="required"
           placeholder="Enter pickup-Time..."

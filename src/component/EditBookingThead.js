@@ -7,8 +7,8 @@ function EditBookingThead() {
         <th>
           <h2>Pickup-Location</h2>
         </th>
-        <th>
-          <h2>Pickup-Time</h2>
+        <th className="time">
+          <h2 className="time">Pickup-Time</h2>
         </th>
         <th>
           <h2>Dropoff-Location</h2>

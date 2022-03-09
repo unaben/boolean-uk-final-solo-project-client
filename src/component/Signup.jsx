@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
-import Footer from "./Footer";
 
 export default function Signup({
   authenticatedUser,
@@ -17,6 +16,7 @@ export default function Signup({
     postcode: "",
     phone: "",
   });
+  const [isMouseOver, setMouseOver] = useState(false);
 
   console.log({ users, authenticatedUser });
 
@@ -177,12 +177,23 @@ export default function Signup({
             <h3 className="signup-msg">Create a free account</h3>
             <h3 className="setLogin-click">
               Already registered?
-              <span onClick={() => setIsLoggedin(true)}>click to login</span>
+              <span
+                onClick={() => setIsLoggedin(true)}
+                style={{ color: isMouseOver ? "red" : "black" }}
+                onMouseOver={() => {
+                  console.log("MouseOver");
+                  setMouseOver(true);
+                }}
+                onMouseOut={() => {
+                  setMouseOver(false);
+                }}
+              >
+                click to login
+              </span>
             </h3>
           </form>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

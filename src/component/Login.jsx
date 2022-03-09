@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 import jwt from "jsonwebtoken";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
-// import Footer from "./Footer";
-// import Header from "./Header";
 
 function Login({
   setUserId,
@@ -73,7 +70,6 @@ function Login({
 
   return (
     <>
-   
       <main>
         <div className="form_container">
           <div>
@@ -123,7 +119,6 @@ function Login({
           </div>
         </div>
       </main>
-      <Footer />    
     </>
   );
 }
