@@ -7,31 +7,24 @@
   box-sizing: border-box;
 }
 
-/*App container*/
-
-.app_container {
-  min-height: 100vh;
+body {
   background-image: url("https://www.transparenttextures.com/patterns/polonez-pattern.png");
   background-color: #005b85;
   background-size: cover;
   background-position: bottom;
+  object-fit: cover;
+}
+/*App container*/
+
+.app_container {
+  min-height: 100vh;
   display: grid;
   place-content: center;
 }
 
-.year{
+.year {
   color: wheat;
 }
-
-/* .span-signup :hover{
-color: red;
-}
-
-span {
-  color: blue;
-} */
-
-/*input*/
 
 .reg_column {
   display: grid;
@@ -220,8 +213,6 @@ input {
   box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
 }
 
-/* .auth, */
-
 .ui-container {
   background-color: rgb(221, 230, 221);
   padding: 30px;
@@ -236,6 +227,8 @@ input {
   border-radius: 5px;
   padding: 5px;
 }
+
+/*form*/
 
 .signup-ui,
 .booking-form,
@@ -269,10 +262,6 @@ input {
 .last_form_input {
   margin-bottom: 10px;
 }
-
-/*sign-up*/
-
-/*form*/
 
 .form_container {
   margin-top: 30px;
