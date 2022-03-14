@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 function Header() {
 
-  const headerStyle = { 
-    color: "wheat",
-  };
+  // const headerStyle = { 
+  //   color: "wheat",
+  // };
   return (
     <section className="header_container ">
       <h1 style={{ color: "wheat" }}>TAXI-APP</h1>
